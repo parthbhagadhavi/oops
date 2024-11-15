@@ -1,0 +1,55 @@
+<script>
+    class Car {
+        constructor(name, speed, price, color) {
+            this.name = name;
+            this.speed = speed;
+            this.price = price;
+            this.color = color;
+        }
+
+        carcolor() {
+            throw new Error('dont get car "speed"');
+        }
+
+    }
+    class Car1 extends Car {
+
+    }
+
+    let bmw1 = new Car1("bmw", 320, 410000, "red");
+
+
+
+    class Car2 extends Car {
+        constructor(name, speed, price, color, average) {
+            super(name, speed, price, color);
+            this.average = average;
+
+        }
+
+        caraverage() {
+            console.log(`audi average is ${this.average}`);
+
+        }
+        carcolor() {
+            console.log("red");
+        }
+    }
+
+
+    let audi2 = new Car2("audi", 400, 800000, "gray", 60);
+
+
+    console.log(audi2);
+    try {
+        console.log(bmw1.carcolor());
+    } catch (e) {
+        console.log(e);
+    }
+    try {
+        console.log(audi2.carcolor());
+    } catch (e) {
+        console.log(e);
+    }
+
+</script>
